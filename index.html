@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/scss/style.scss" />
+		<link rel="stylesheet" href="./assets/scss/positioning.scss" />
+		<script src="/assets/ts/main.ts"></script>
+		<title>Hofmann 1.0.0</title>
+	</head>
+
+	<body>
+		<!-- Navbar -->
+		<nav class="bar bar-top">
+			<a href="" id="title">Hofmann 1.0.0</a>
+			<div id="sections">
+				<a class="link" href="">ABOUT</a>
+				<a class="link" href="">GALLERY</a>
+				<a class="link" target="_blank" href="https://paypal.me/bbtgnn?locale.x=it_IT">DONATE[↗]</a>
+				<nobr>
+				<a class="link" href="https://bbtgnn.net" target="_blank"><span class="happily">Happily made by </span>BBTGNN.NET</a>
+				</nobr>
+			</div>
+		</nav>
+		<!-- Main -->
+		<div class="workspace">
+			<!-- <input type="button" id="row-top-add" value="+" /> -->
+			<!-- <input type="button" id="row-top-sub" value="-" /> -->
+			<input type="button" id="row-bot-add" value="+" />
+			<input type="button" id="row-bot-sub" value="-" />
+			<!-- <input type="button" id="col-lft-add" value="+" /> -->
+			<!-- <input type="button" id="col-lft-sub" value="-" /> -->
+			<input type="button" id="col-rgt-add" value="+" />
+			<input type="button" id="col-rgt-sub" value="-" />
+			<div id="canvas-container">
+				<canvas id="canvas" resize></canvas>
+			</div>
+		</div>
+		<!-- Control bar -->
+		<div class="bar bar-bot">
+			<div id="radius">
+				<label id="slider-label" for="radius-slider">Radius</label>
+				<input type="range" id="radius-slider" name="radius-slider" min="0.01" max="0.99" step="0.01" />
+				<input type="number" id="radius-field" name="radius-field" min="0.01" max="0.99" step="0.01" />
+			</div>
+			<div id="clear">
+				<input id="clear-button" class="download-button" type="button" value="clear" />
+			</div>
+			<div id="download">
+				<div>
+					<input type="checkbox" id="circles-checkbox" name="circles-checkbox" />
+					<label for="circles-checkbox">Hide circles</label>
+				</div>
+				<div id="download-buttons">
+					<input id="download-png" class="download-button" type="button" value="↓PNG" />
+					<input id="download-svg" class="download-button" type="button" value="↓SVG" />
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

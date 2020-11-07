@@ -1,0 +1,46 @@
+$blue: #0038ff;
+$gray_10: rgb(230, 230, 230);
+$gray_05: rgb(245, 245, 245);
+
+@font-face {
+  font-family: "spacemono";
+  font-style: normal;
+  src: url("./fonts/SpaceMono-Regular.ttf") format("truetype");
+}
+
+* {
+  font-family: "spacemono";
+  font-size: 1.05rem;
+}
+
+.bar-top {
+  border-bottom: 2px solid black;
+}
+
+.link {
+  color: $blue;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+span.happily {
+  color: $gray_10;
+}
+
+#title {
+  color: $blue;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-decoration: none;
+}
+
+#title:hover {
+  color: black;
+}
+
+.workspace {
+  background-color: $gray_05;
+}
