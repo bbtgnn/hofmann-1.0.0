@@ -5,58 +5,52 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./assets/scss/style.scss" />
-		<link rel="stylesheet" href="./assets/scss/positioning.scss" />
 		<script src="/assets/ts/main.ts"></script>
 		<title>Hofmann 1.0.0</title>
 	</head>
-
+	
 	<body>
 		<!-- Navbar -->
-		<nav class="bar bar-top">
-			<a href="" id="title">Hofmann 1.0.0</a>
-			<div id="sections">
-				<a class="link" href="">ABOUT</a>
-				<a class="link" href="">GALLERY</a>
-				<a class="link" target="_blank" href="https://paypal.me/bbtgnn?locale.x=it_IT">DONATE[↗]</a>
+		<div class="navbar">
+			<a class="navbar__logo" href="">Hofmann 1.0.0</a>
+			<div class="navbar__menu">
+				<a class="navbar__link" href="">ABOUT</a>
+				<a class="navbar__link" href="">GALLERY</a>
+				<a class="navbar__link" target="_blank" href="https://paypal.me/bbtgnn?locale.x=it_IT">DONATE[↗]</a>
 				<nobr>
-				<a class="link" href="https://bbtgnn.net" target="_blank"><span class="happily">Happily made by </span>BBTGNN.NET</a>
+				<a class="navbar__link" href="https://bbtgnn.net" target="_blank"><span class="navbar__link-gray">Happily made by </span>BBTGNN.NET</a>
 				</nobr>
 			</div>
-		</nav>
+		</div>
 		<!-- Main -->
 		<div class="workspace">
 			<!-- <input type="button" id="row-top-add" value="+" /> -->
 			<!-- <input type="button" id="row-top-sub" value="-" /> -->
-			<input type="button" id="row-bot-add" value="+" />
-			<input type="button" id="row-bot-sub" value="-" />
+			<input class="workspace__btn btn_bot_add" type="button" value="+" />
+			<input class="workspace__btn btn_bot_sub" type="button" value="-" />
 			<!-- <input type="button" id="col-lft-add" value="+" /> -->
 			<!-- <input type="button" id="col-lft-sub" value="-" /> -->
-			<input type="button" id="col-rgt-add" value="+" />
-			<input type="button" id="col-rgt-sub" value="-" />
-			<div id="canvas-container">
-				<canvas id="canvas" resize></canvas>
+			<input class="workspace__btn btn_rgt_add" type="button" value="+" />
+			<input class="workspace__btn btn_rgt_sub" type="button" value="-" />
+			<div class="workspace__canvas-container">
+				<canvas class="workspace__canvas"></canvas>
 			</div>
 		</div>
 		<!-- Control bar -->
-		<div class="bar bar-bot">
-			<div id="radius">
-				<label id="slider-label" for="radius-slider">Radius</label>
-				<input type="range" id="radius-slider" name="radius-slider" min="0.01" max="0.99" step="0.01" />
-				<input type="number" id="radius-field" name="radius-field" min="0.01" max="0.99" step="0.01" />
+		<div class="controls">
+			<div class="controls__item controls__radius">
+				<label class="controls__radius__label">Radius</label>
+				<input class="controls__radius__slider" type="range" min="0.01" max="0.99" step="0.01" />
+				<input class="controls__radius__field" type="number" min="0.01" max="0.99" step="0.01" />
 			</div>
-			<div id="clear">
-				<input id="clear-button" class="download-button" type="button" value="clear" />
+			<div class="controls__item controls__clear">
+				<input class="controls__btn controls__clear__btn" type="button" value="clear"/>
 			</div>
-			<div id="download">
-				<div>
-					<input type="checkbox" id="circles-checkbox" name="circles-checkbox" />
-					<label for="circles-checkbox">Hide circles</label>
-				</div>
-				<div id="download-buttons">
-					<input id="download-png" class="download-button" type="button" value="↓PNG" />
-					<input id="download-svg" class="download-button" type="button" value="↓SVG" />
-				</div>
+			<div class="controls__item controls__download">
+				<input class="controls__btn controls__download_PNG" type="button" value="↓PNG" />
+				<input class="controls__btn controls__download_SVG" type="button" value="↓SVG" />
 			</div>
 		</div>
+		<div class="sorry">Sorry! :(<br>But your princess is in another castle!<br><br>(This website runs for now just on desktop!)</div>
 	</body>
 </html>
