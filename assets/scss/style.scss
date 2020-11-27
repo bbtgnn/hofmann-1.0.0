@@ -1,5 +1,5 @@
 $pad: 2rem;
-$workspace__button: 2rem;
+$workspace__button: 1.5rem;
 // $button_hgt: 2rem;
 
 $blue: #0038ff;
@@ -42,8 +42,8 @@ body {
 
   padding: 0 10%;
 
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 }
 
 // -- NAVBAR -- //
@@ -95,17 +95,17 @@ body {
   margin-bottom: 0;
 
   display: grid;
-  grid-template-columns: $workspace__button 1fr 1fr $workspace__button;
-  grid-template-rows: $workspace__button 1fr 1fr $workspace__button;
+  grid-template-columns: $workspace__button $workspace__button 1fr $workspace__button $workspace__button;
+  grid-template-rows: $workspace__button $workspace__button 1fr $workspace__button $workspace__button;
 
   background-color: $gray_05;
 }
 
 .workspace__canvas-container {
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 3;
   overflow: hidden;
 }
 
@@ -119,22 +119,21 @@ body {
 }
 
 .btn_bot_add {
-  grid-row-start: 4;
+  grid-row-start: 5;
   grid-column-start: 3;
 }
 .btn_bot_sub {
   grid-row-start: 4;
-  grid-column-start: 2;
+  grid-column-start: 3;
 }
 .btn_rgt_add {
-  grid-row-start: 2;
-  grid-column-start: 4;
+  grid-row-start: 3;
+  grid-column-start: 5;
 }
 .btn_rgt_sub {
   grid-row-start: 3;
   grid-column-start: 4;
 }
-
 
 // -- CONTROLS -- //
 
@@ -152,10 +151,62 @@ body {
   margin-top: $pad/2;
 }
 
+.controls__help {
+  color: $blue;
+}
+
+.controls__help:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .controls__radius__slider {
   width: 3 * $pad;
 }
 
 .controls__btn {
   padding: 0 $pad;
+}
+
+// Tutorial / Modal
+
+.tutorial {
+  // position and size are set by javascript
+  background-color: $blue;
+  position: absolute;
+  //
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutorial__close {
+  color: white;
+  //
+  position: absolute;
+  // Div sizing
+  width: 2 * $pad;
+  height: 2 * $pad;
+  top: 0;
+  right: 0;
+  // Text centering
+  font-size: $pad;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutorial__close:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tutorial__text {
+  color: white;
+  max-width: 800px;
+  padding: $pad * 2;
+}
+
+.invisible {
+  display: none;
 }

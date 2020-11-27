@@ -5,7 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./assets/scss/style.scss" />
-		<script src="/assets/ts/main.ts"></script>
+		<script src="./assets/ts/main.ts"></script>
 		<title>Hofmann 1.0.0</title>
 	</head>
 	
@@ -38,6 +38,9 @@
 		</div>
 		<!-- Control bar -->
 		<div class="controls">
+			<div class="controls__item">
+				<p class="controls__help">How to use</p>
+			</div>
 			<div class="controls__item controls__radius">
 				<label class="controls__radius__label">Radius</label>
 				<input class="controls__radius__slider" type="range" min="0.01" max="0.99" step="0.01" />
@@ -51,6 +54,20 @@
 				<input class="controls__btn controls__download_SVG" type="button" value="↓SVG" />
 			</div>
 		</div>
+		<!-- Modal how to use -->
+		<div class="tutorial invisible">
+			<div class="tutorial__close">×</div>
+			<p class="tutorial__text">
+				To start, click on any circle. Then, click on a second circle. Then, click on one of the lines that appear. Repeat.<br>
+				<br>
+				- and + signs on the right add a new column of dots<br>
+				- and + signs on the botton add a new row of dots<br>
+				<br>
+				ATTENTION! At the moment there's no UNDO and REDO functionality – so consider carefully every move! But I'm going to fix this real soon :)
+			</p>
+		</div>
+		<!-- Mobile screen -->
 		<div class="sorry">Sorry! :(<br>But your princess is in another castle!<br><br>(This website runs for now just on desktop!)</div>
+
 	</body>
 </html>

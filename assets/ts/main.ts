@@ -32,16 +32,40 @@ function resize_workspace__canvas(canvas) {
   // Vertical space between workspace and canvas
   let canvas_margin_ver = workspace_style["grid-template-rows"].split(" ")[0];
   // Calculating by subtraction canvas height
-  let heights = [document.querySelector(".navbar").clientHeight, document.querySelector(".controls").clientHeight, parseInt(workspace_style.marginTop, 10), parseInt(canvas_margin_ver, 10), parseInt(canvas_margin_ver, 10), 10];
+  let heights = [document.querySelector(".navbar").clientHeight, document.querySelector(".controls").clientHeight, parseInt(workspace_style.marginTop, 10), 4 * parseInt(canvas_margin_ver, 10), 10];
   let hgt = window.innerHeight - heights.reduce((a, b) => a + b, 0);
   // Setting the height
   canvas.height = hgt;
   canvas.style.height = hgt + "px";
 }
 
+function modal_size() {
+  const modal = document.querySelector(".tutorial");
+  const reference = document.querySelector(".workspace");
+  modal.style.top = reference.getBoundingClientRect().top + "px";
+  modal.style.left = reference.getBoundingClientRect().left + "px";
+  modal.style.width = reference.getBoundingClientRect().width + "px";
+  modal.style.height = reference.getBoundingClientRect().height + "px";
+}
+
 window.onload = function () {
   // Checking if browser is mobile
   mobileAndTabletCheck();
+
+  // Modal managing
+  const modal = document.querySelector(".tutorial");
+  // Setting the modal size (and in onresize we recalculate)
+  modal_size();
+  // Opening modal
+  const modal_button = document.querySelector(".controls__help");
+  modal_button.addEventListener("click", function (event) {
+    modal.classList.toggle("invisible");
+  });
+  // Closing modal
+  const modal_close = document.querySelector(".tutorial__close");
+  modal_close.addEventListener("click", function (event) {
+    modal.classList.toggle("invisible");
+  });
 
   // Getting a reference to the canvas object
   let canvas = document.querySelector(".workspace__canvas");
@@ -58,6 +82,7 @@ window.onload = function () {
   // Setting onresize
   window.onresize = function () {
     resize_workspace__canvas(canvas);
+    modal_size();
     appRndr.refresh();
   };
   // -- Buttons -- //

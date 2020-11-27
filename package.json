@@ -4,5 +4,6 @@
     "paper": "^0.12.11",
     "sass": "^1.29.0",
     "typescript": "^4.0.5"
-  }
+  },
+  "name": "hofmann-1.0.0"
 }
