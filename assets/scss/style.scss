@@ -21,7 +21,7 @@ $gray_05: rgb(245, 245, 245);
   font-size: 1.05rem;
 }
 
-body {
+.main {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -49,6 +49,7 @@ body {
 // -- NAVBAR -- //
 
 .navbar {
+  background-color: white;
   padding: $pad/2 $pad;
   display: flex;
   align-items: center;

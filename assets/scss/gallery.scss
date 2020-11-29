@@ -1,0 +1,51 @@
+$pad: 2rem;
+$workspace__button: 1.5rem;
+// $button_hgt: 2rem;
+
+$blue: #0038ff;
+$gray_10: rgb(230, 230, 230);
+$gray_05: rgb(245, 245, 245);
+
+.gallery__navbar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.gallery__intro {
+  background-color: $blue;
+  color: white;
+  padding: $pad $pad;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery__intro__text {
+  text-align: center;
+  max-width: 600px;
+}
+
+.gallery__intro__link {
+  color: white;
+}
+
+.gallery__intro__link:hover {
+  background-color: black;
+}
+
+.gallery__item {
+  padding: $pad;
+}
+
+.gallery__image {
+  display: block;
+}
+
+.gallery__link {
+  float: right;
+  margin-top: 1vh;
+}
+
+.gallery__link:visited {
+  color: black;
+}
