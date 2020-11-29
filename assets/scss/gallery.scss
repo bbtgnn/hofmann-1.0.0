@@ -6,6 +6,10 @@ $blue: #0038ff;
 $gray_10: rgb(230, 230, 230);
 $gray_05: rgb(245, 245, 245);
 
+.gallery {
+  padding-bottom: $pad;
+}
+
 .gallery__navbar {
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -44,6 +48,7 @@ $gray_05: rgb(245, 245, 245);
 .gallery__link {
   float: right;
   margin-top: 1vh;
+  color: black;
 }
 
 .gallery__link:visited {

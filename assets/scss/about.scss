@@ -1,0 +1,40 @@
+$pad: 2rem;
+$workspace__button: 1.5rem;
+// $button_hgt: 2rem;
+
+$blue: #0038ff;
+$gray_10: rgb(230, 230, 230);
+$gray_05: rgb(245, 245, 245);
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $pad;
+}
+
+.content__images {
+  flex: 50%;
+  max-width: 50%;
+  padding-right: $pad;
+}
+
+.content__image {
+  vertical-align: middle;
+  width: 100%;
+  padding-bottom: $pad;
+}
+
+.content__text {
+  flex: 50%;
+  max-width: 35rem;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 750px) {
+  .content__images,
+  .content__text {
+    flex: 100%;
+    max-width: 100%;
+    padding-right: 0;
+  }
+}

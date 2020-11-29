@@ -46,6 +46,18 @@ $gray_05: rgb(245, 245, 245);
   align-items: center;
 }
 
+.sorry__link {
+  color: white;
+}
+
+.sorry__link:visited {
+  color: white;
+}
+
+.sorry__link:active {
+  background-color: black;
+}
+
 // -- NAVBAR -- //
 
 .navbar {
