@@ -10,12 +10,6 @@ $gray_05: rgb(245, 245, 245);
   padding-bottom: $pad;
 }
 
-.gallery__navbar {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-
 .gallery__intro {
   background-color: $blue;
   color: white;
@@ -39,15 +33,27 @@ $gray_05: rgb(245, 245, 245);
 
 .gallery__item {
   padding: $pad;
+  margin-top: 2 * $pad;
 }
 
 .gallery__image {
   display: block;
+
+  margin-left: auto;
+  margin-right: auto;
+  // height: 50vh;
+  // width: auto;
+  max-height: min(70vh, 700px);
+  width: auto;
+  // height: auto;
+  // width: 100%;
+  // max-width: 500px;
 }
 
 .gallery__link {
-  float: right;
-  margin-top: 1vh;
+  display: block;
+  text-align: center;
+  margin-top: $pad;
   color: black;
 }
 

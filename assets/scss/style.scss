@@ -21,17 +21,18 @@ $gray_05: rgb(245, 245, 245);
   font-size: 1.05rem;
 }
 
-.main {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
+// .main {
+//   height: 100vh;
+//   overflow: hidden;
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .sorry {
   display: none;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 99;
@@ -60,14 +61,28 @@ $gray_05: rgb(245, 245, 245);
 
 // -- NAVBAR -- //
 
-.navbar {
+.max-width {
+  max-width: 1600px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+.navbar-container {
   background-color: white;
+  border-bottom: 2px solid black;
+  position: sticky;
+  top: 0;
+}
+
+.navbar {
   padding: $pad/2 $pad;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 2px solid black;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
 
 .navbar__logo {
@@ -77,6 +92,10 @@ $gray_05: rgb(245, 245, 245);
   font-size: 1.6rem;
   line-height: 1.6rem;
   text-decoration: none;
+}
+
+.navbar__logo:hover {
+  color: black;
 }
 
 .navbar__menu {
@@ -92,8 +111,17 @@ $gray_05: rgb(245, 245, 245);
   text-decoration: none;
 }
 
+.navbar__link-active {
+  color: black;
+  text-decoration: underline;
+}
+
 .navbar__link-gray {
   color: $gray_10;
+
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
 }
 
 .navbar__link:hover {
@@ -106,6 +134,7 @@ $gray_05: rgb(245, 245, 245);
   flex-grow: 1;
   margin: $pad;
   margin-bottom: 0;
+  max-height: calc(800px + #{$workspace__button * 4});
 
   display: grid;
   grid-template-columns: $workspace__button $workspace__button 1fr $workspace__button $workspace__button;

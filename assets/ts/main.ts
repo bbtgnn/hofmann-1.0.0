@@ -34,6 +34,9 @@ function resize_workspace__canvas(canvas) {
   // Calculating by subtraction canvas height
   let heights = [document.querySelector(".navbar").clientHeight, document.querySelector(".controls").clientHeight, parseInt(workspace_style.marginTop, 10), 4 * parseInt(canvas_margin_ver, 10), 10];
   let hgt = window.innerHeight - heights.reduce((a, b) => a + b, 0);
+  if (hgt > 800) {
+    hgt = 800;
+  }
   // Setting the height
   canvas.height = hgt;
   canvas.style.height = hgt + "px";
@@ -42,6 +45,7 @@ function resize_workspace__canvas(canvas) {
 function modal_size() {
   const modal = document.querySelector(".tutorial");
   const reference = document.querySelector(".workspace");
+  console.log(reference.getBoundingClientRect());
   modal.style.top = reference.getBoundingClientRect().top + "px";
   modal.style.left = reference.getBoundingClientRect().left + "px";
   modal.style.width = reference.getBoundingClientRect().width + "px";
@@ -55,7 +59,7 @@ window.onload = function () {
   // Modal managing
   const modal = document.querySelector(".tutorial");
   // Setting the modal size (and in onresize we recalculate)
-  modal_size();
+
   // Opening modal
   const modal_button = document.querySelector(".controls__help");
   modal_button.addEventListener("click", function (event) {
@@ -72,6 +76,7 @@ window.onload = function () {
 
   // Resizing it correctly
   resize_workspace__canvas(canvas);
+  modal_size(); // Need to call this after canvas resize bc has to take correct sizing
 
   paper.setup(canvas);
   // Canvas resizing
@@ -96,28 +101,28 @@ window.onload = function () {
       type: "image/svg+xml;charset=utf-8",
     });
     const svgUrl = URL.createObjectURL(svgBlob);
-    const name = "hoffman.svg";
+    const name = "hoffman100.svg";
     const downloadLink = document.createElement("a");
     downloadLink.href = svgUrl;
     downloadLink.download = name;
     downloadLink.click();
   };
-  const button_download_png = document.querySelector(".controls__download_PNG");
+  const button_download_png: HTMLElement = document.querySelector(".controls__download_PNG");
   button_download_png.onclick = function () {
     const imgData = canvas.toDataURL();
-    const name = "ahoffman.png";
+    const name = "hoffman100.png";
     const downloadLink = document.createElement("a");
     downloadLink.href = imgData;
     downloadLink.download = name;
     downloadLink.click();
   };
   // Rows
-  const row_bot_add = document.querySelector(".btn_bot_add");
+  const row_bot_add: HTMLElement = document.querySelector(".btn_bot_add");
   row_bot_add.onclick = function () {
     app.addRow();
     appRndr.refresh();
   };
-  const row_bot_sub = document.querySelector(".btn_bot_sub");
+  const row_bot_sub: HTMLElement = document.querySelector(".btn_bot_sub");
   row_bot_sub.onclick = function () {
     // Condizione sempre verificabile di partenza
     let c: boolean = app.rows > 1;
@@ -145,12 +150,12 @@ window.onload = function () {
     }
   };
   // Cols
-  const col_rgt_add = document.querySelector(".btn_rgt_add");
+  const col_rgt_add: HTMLElement = document.querySelector(".btn_rgt_add");
   col_rgt_add.onclick = function () {
     app.addCol();
     appRndr.refresh();
   };
-  const col_rgt_sub = document.querySelector(".btn_rgt_sub");
+  const col_rgt_sub: HTMLElement = document.querySelector(".btn_rgt_sub");
   col_rgt_sub.onclick = function () {
     // Condizione sempre verificabile di partenza
     let c: boolean = app.cols > 1;
@@ -178,7 +183,7 @@ window.onload = function () {
     }
   };
   // Radius
-  const label: any = document.getElementById("slider-label");
+  const label: HTMLElement = document.getElementById("slider-label");
   // label.innerHTML = Math.round(appRndr.dflt_ratio * 100) / 100;
   var radius_slider: any = document.querySelector(".controls__radius__slider");
   radius_slider.value = appRndr.dflt_ratio;
@@ -201,7 +206,7 @@ window.onload = function () {
     radius_slider.value = val;
   };
 
-  var button_clear = document.querySelector(".controls__clear__btn");
+  var button_clear: HTMLElement = document.querySelector(".controls__clear__btn");
   button_clear.onclick = function () {
     app.clear();
     appRndr.refresh();
