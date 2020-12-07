@@ -21,7 +21,6 @@ $gray_05: rgb(245, 245, 245);
 .content__image {
   vertical-align: middle;
   width: 100%;
-  padding-bottom: $pad;
 }
 
 .content__text {
@@ -38,4 +37,24 @@ $gray_05: rgb(245, 245, 245);
     padding-right: 0;
     padding-left: 0;
   }
+}
+
+.blue {
+  color: $blue;
+}
+
+.gray {
+  color: rgb(200, 200, 200);
+}
+
+.space-after {
+  margin-bottom: $pad;
+}
+
+.space-before {
+  margin-top: $pad;
+}
+
+.space-before-3 {
+  margin-top: $pad * 3;
 }
